@@ -132,7 +132,7 @@
 // Name displayed in the LCD "Ready" message and Info menu
 //#define CUSTOM_MACHINE_NAME "3D Printer"
 //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
-#define CUSTOM_MACHINE_NAME "Ender-3 Pro CRTouch"
+#define CUSTOM_MACHINE_NAME "Ender-3 Pro - 2.1.x-bugfix-CRTouch"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1297,7 +1297,11 @@
  * Override with M92 (when enabled below)
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
+<<<<<<< HEAD
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 } // KO: 144.59 for E0 dual-gear
+=======
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
+>>>>>>> 4adeb6a517 (Store configurations for Ender2 and Ender3 Pro using CRTouch)
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.

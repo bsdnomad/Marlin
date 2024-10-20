@@ -1,0 +1,75 @@
+--- Marlin/Configuration.h	2025-05-27 11:45:17.004275037 +0300
++++ Marlin/Configuration.h	2025-05-27 12:01:26.000000000 +0300
+@@ -20,8 +20,8 @@
+  *
+  */
+ #pragma once
+-
+-#define CONFIG_EXAMPLES_DIR "Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 3.0"
++#error "Don't build with import-2.1.x configurations!"
++#error "Use the 'bugfix...' or 'release...' configurations matching your Marlin version."
+ 
+ /**
+  * Configuration.h
+@@ -126,13 +126,15 @@
+   //#define RS485_BUS_BUFFER_SIZE 128
+ #endif
+ 
++// Enable CAN bus support and protocol
++//#define CAN_MASTER
++
+ // Enable the Bluetooth serial interface on AT90USB devices
+ //#define BLUETOOTH
+ 
+ // Name displayed in the LCD "Ready" message and Info menu
+-//#define CUSTOM_MACHINE_NAME "3D Printer"
++#define CUSTOM_MACHINE_NAME "Ender-3 Pro - 2.1.x-bugfix-CRTouch"
+ //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
+-#define CUSTOM_MACHINE_NAME "Ender-3 Pro - 2.1.x-bugfix-CRTouch"
+ 
+ // Printer's unique ID, used by some programs to differentiate between machines.
+ // Choose your own or use a service like https://www.uuidgenerator.net/version4
+@@ -771,6 +773,7 @@
+ 
+   #define MPC_TUNING_POS { X_CENTER, Y_CENTER, 1.0f } // (mm) M306 Autotuning position, ideally bed center at first layer height.
+   #define MPC_TUNING_END_Z 10.0f                      // (mm) M306 Autotuning final Z position.
++  //#define EVENT_GCODE_AFTER_MPC_TUNE "M84"          // G-code to execute after MPC tune finished and Z raised.
+ #endif
+ 
+ //===========================================================================
+@@ -1582,7 +1585,6 @@
+  *          Take extreme care when setting up this feature.
+  */
+ //#define SENSORLESS_PROBING
+-#define DIAG_JUMPERS_REMOVED
+ 
+ /**
+  * Allen key retractable z-probe as seen on many Kossel delta printers - https://reprap.org/wiki/Kossel#Autolevel_probe
+@@ -1961,7 +1963,7 @@
+ #endif
+ 
+ #if ANY(MIN_SOFTWARE_ENDSTOPS, MAX_SOFTWARE_ENDSTOPS)
+-  // #define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
++  //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
+ #endif
+ 
+ /**
+@@ -3340,14 +3329,14 @@
+ //#define ANYCUBIC_LCD_VYPER
+ 
+ //
+-// 320x240 Nextion 2.8" serial TFT Resistive Touch Screen NX3224T028
++// Sovol SV-06 Resistive Touch Screen
+ //
+-//#define NEXTION_TFT
++//#define SOVOL_SV06_RTS
+ 
+ //
+-// Sovol SV-06 Resistive Touch Screen
++// 320x240 Nextion 2.8" serial TFT Resistive Touch Screen NX3224T028
+ //
+-//#define SOVOL_SV06_RTS
++//#define NEXTION_TFT
+ 
+ //
+ // PanelDue touch controller by Escher3D

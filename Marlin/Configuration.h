@@ -1297,11 +1297,7 @@
  * Override with M92 (when enabled below)
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-<<<<<<< HEAD
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 } // KO: 144.59 for E0 dual-gear
-=======
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
->>>>>>> 4adeb6a517 (Store configurations for Ender2 and Ender3 Pro using CRTouch)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 144.59 } // KO: 144.59 for E0 dual-gear, originally 93
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -1587,6 +1583,7 @@
  *          Take extreme care when setting up this feature.
  */
 //#define SENSORLESS_PROBING
+#define DIAG_JUMPERS_REMOVED
 
 /**
  * Allen key retractable z-probe as seen on many Kossel delta printers - https://reprap.org/wiki/Kossel#Autolevel_probe

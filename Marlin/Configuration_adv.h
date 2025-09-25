@@ -3509,11 +3509,7 @@
   //#define SENSORLESS_HOMING // StallGuard capable drivers only
 
   #if ANY(SENSORLESS_HOMING, SENSORLESS_PROBING)
-<<<<<<< HEAD
     // TMC2209/2240: 0...255. TMC2130: -64...63
-=======
-    // TMC2209: 0...255. TMC2130: -64...63
->>>>>>> cece9ea31b (Rebase with the recent changes)
     #define X_STALL_SENSITIVITY  75
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
     #define Y_STALL_SENSITIVITY  75
